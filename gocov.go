@@ -27,7 +27,7 @@ type GocovResult struct {
 
 func runGocov() (io.ReadCloser, error) {
 	cmd := exec.Command("gocov")
-	args := []string{"gocov", "test", "-covermode", *covermode}
+	args := []string{"gocov", "test", "-covermode", *covermode, "-tags", "test"}
 	if *verbose {
 		args = append(args, "-v")
 	}
